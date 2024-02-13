@@ -21,6 +21,10 @@ function Main() {
   const handleStop= async (blobUrl)=>{
     setIsLoading(true);
 
+      if (blobUrl) {
+    window.URL.revokeObjectURL(blobUrl);
+  }
+
 
     fetch(blobUrl)
     .then((res)=>res.blob()
